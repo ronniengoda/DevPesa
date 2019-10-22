@@ -28,7 +28,7 @@ if ($status=="Success") {
 	//Insert the transaction details for future reference and accountability.
 	sql("INSERT INTO transactions SET transaction_type='Deposit',phone_number='$source',amount='$amt',new_wallet_balance='$newBalance',`date`='".date('Y-m-d')."',`time`='".date('h:s:a')."'");
 	$reciver=$source;
-	$message="You have successfully deposited Ksh ".$amt." on".date('Y/m/d h:s:A')." your new DevPesa wallet balance is Ksh ".$newBalance;
+	$message="You have successfully deposited Ksh ".$amt." on ".date('Y/m/d h:s:A')." your new DevPesa wallet balance is Ksh ".$newBalance;
 	
 	//Send an sms to the user informing them their wallet has been credited
 	sendSMS($reciver,$message);

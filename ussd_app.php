@@ -72,7 +72,7 @@ elseif ($level=="12") {
     # code...
 		$response  = "END Please Provide Your Email";
 	}
-	elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+	elseif (!filter_var($textFinal, FILTER_VALIDATE_EMAIL)) {
 		$response  = "END Please Provide A Valid Email";
 	}
 	else{

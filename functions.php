@@ -119,12 +119,13 @@ function processSTK($textFinal,$phoneNumber){
 		$result=$gateway->ProcessLNMO($LNMODataEncoded);
 		$decode=json_decode($result);
 		$status=$decode->status;
-		if ($status=='false') {
+		if ($status=='true') {
 			# code...
-			$response="END Sorry we encoutered a problem try again later";
+			$response="END Request submitted for processing.You will receive a prompt on your mobile phone to complete payment";
+			
 		}
 		else{
-			$response="END Request submitted for processing.You will receive a prompt on your mobile phone to complete payment";
+			$response="END Sorry we encoutered a problem try again later";
 		}
 	} catch (Exception $e) {
 		echo $e->getMessage();
